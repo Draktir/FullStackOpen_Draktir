@@ -1,0 +1,11 @@
+sequenceDiagram
+    title New Note in Single Page App
+    participant Browser
+    participant Server
+
+    Browser-->Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    
+    Note over Browser: Browser overrides default form behavior to redraws the notes in the window
+    Note over Server: Server receives the new note as json
+
+    Server-->>Browser: {"message":"note created"}
